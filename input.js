@@ -25,6 +25,8 @@ const handleUserInput = function (key, connection) {
 
   } else if (key === 's') {
     connection.write('Move: down')
+  }else if(key === 'm'){
+    connection.write('Say: trolol')
   }
 }
 
