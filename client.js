@@ -36,12 +36,12 @@ const connect = function () {
       conn.write('Move: up');
     }, 250)
   });
-  conn.on('connect', () => {
-    setInterval(() => {
-      conn.write('Move: right');
-    }, 50)
+  // conn.on('connect', () => {
+  //   setInterval(() => {
+  //     conn.write('Move: right');
+  //   }, 50)
     
-  });
+  // });
 
   return conn;
 
