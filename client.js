@@ -13,13 +13,38 @@ const connect = function () {
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
-  conn.on('connect',() => {
+  conn.on('connect', () => {
     console.log("Successfully connected to game server")
   });
   conn.on('connect', () => {
-    conn.write('HB');
+    conn.write('Name: HB');
   });
-  return conn;
-}
+  conn.on('connect', () => {
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 50)
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 100)
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 150)
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 200)
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 250)
+  });
+  conn.on('connect', () => {
+    setInterval(() => {
+      conn.write('Move: right');
+    }, 50)
+    
+  });
 
-module.exports = connect;
+  return conn;
+
+
+}
+module.exports = { connect };
